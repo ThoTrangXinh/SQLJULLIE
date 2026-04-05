@@ -35,6 +35,27 @@ group by card_name
 order by difference DESC
 
 
+SELECT manufacturer,
+count (drug) as drug_count,
+sum(cogs) - sum (total_sales) as total_loss
+FROM pharmacy_sales
+where total_sales < cogs
+group by manufacturer
+order by total_loss DESC
+
+
+select * from cinema
+where id % 2 = 1
+and description not like '%boring%'
+order by rating DESC
+
+select user_id, 
+count(follower_id) as 'followers_count'
+from followers
+group by user_id
+order by user_id
+
+
 
 
 
